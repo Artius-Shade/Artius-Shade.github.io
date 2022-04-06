@@ -348,7 +348,11 @@ h1 {
     background-color: rgba(0, 0, 0, 0.87);
 }
 
-@media screen and (max-width: 386px) {
+@media screen and (max-width: 470px) {
+    .projects h2 {
+        font-size: 2em;
+    }
+
     .langs h2 {
         font-size: 2em;
     }
@@ -364,12 +368,6 @@ h1 {
             'five';
         gap: 5px;
         margin-bottom: 10px;
-    }
-}
-
-@media screen and (max-width: 470px) {
-    .projects h2 {
-        font-size: 2em;
     }
 }
 
