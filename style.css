@@ -231,10 +231,11 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
+    opacity: 0.9;
 }
 
 .lang-img:hover {
-    transform: scale(1.01);
+    opacity: 1;
 }
 
 .lang-images {

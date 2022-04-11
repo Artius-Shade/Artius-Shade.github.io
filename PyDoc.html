@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        display: grid;
+        grid-template-columns: minmax(270px, 1fr) 5fr;
+    }
+
+    #body-header {
+        position: relative;
+    }
+
+    .python-logo {
+        width: 100px;
+    }
+
+    .navbar ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .navbar a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .navbar a:hover {
+        text-decoration: underline;
+        color: #4280b2;
+    }
+
+    .navbar h1 {
+        display: none;
+    }
+
+    .navbar {
+        position: fixed;
+        width: 270px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        overflow-y: scroll;
+        border-right: 1px solid #cccccc;
+        background-color: #eeeeee
+    }
+
+    .navbar ul {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+    }
+
+    .navbar li {
+        padding: 15px 5px;
+        width: 100%;
+        border-top: 1px solid #cccccc
+    }
+
+    .navbar img {
+        padding: 7px 0;
+    }
+
+    .main-doc {
+        padding-left: 8px;
+    }
+
+    .main-doc h2 {
+        font-size: 1.7em
+    }
+
+    .inline-code {
+        background-color: #ecf0f3;
+        padding: 1px 2px;
+        border-radius: 2px;
+        display: inline-block;
+    }
+
+    .block-code {
+        display: inline-block;
+        background-color: #eeffcc;
+        border: solid 1px #aacc99;
+        margin: 5px;
+        padding: 7px;
+        border-radius: 3px;
+    }
+
+    .main-doc a {
+        color: black;
+    }
+
+    .main-doc a:hover {
+        background-color: hsl(0, 0%, 90%)
+    }
+
+    @media (max-width: 690px) {
+        body {
+            all: unset;
+            display: grid;
+            grid-template-areas:
+                'nav'
+                'main'
+        }
+
+        #body-header {
+            grid-area: nav;
+        }
+
+        .main-doc {
+            grid-area: main;
+        }
+
+        .navbar {
+            all: unset;
+            width: 100%;
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            align-items: center;
+            overflow-y: scroll;
+        }
+
+        .navbar h1 {
+            display: block;
+        }
+    }
+
+    @media (max-width: 340px) {
+        .navbar h1 {
+            display: none;
+        }
+    }
+</style>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="author" content="Artius Shade">
+    <meta name="description" content="Python Documentation">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <title>Python Documentation</title>
+</head>
+
+<body>
+    <header id="body-header">
+        <nav id="navbar" class="navbar">
+            <header>
+                <h1>Python Documentation</h1>
+            </header>
+            <img src="/img/python-logo-colored.png" class="python-logo" alt="python-logo"
+                title="Python Programming Language">
+            <ul>
+                <li><a href="#Introduction" class="nav-link">Introduction</a></li>
+                <li><a href="#History_of_Python" class="nav-link">History of Python</a></li>
+                <li><a href="#Prerequisites" class="nav-link">Prerequisites</a></li>
+                <li><a href="#Hello_world" class="nav-link">Hello world</a></li>
+                <li><a href="#Variables" class="nav-link">Variables</a></li>
+                <li><a href="#Types_in_Python" class="nav-link">Types in Python</a></li>
+                <li><a href="#Conditional_Execution" class="nav-link">Conditional Execution</a></li>
+                <li><a href="#Iteration" class="nav-link">Iteration</a></li>
+                <li><a href="#Functions" class="nav-link">Functions</a></li>
+                <li><a href="#Object_Oriented_Programmming" class="nav-link">Object Oriented Programmming</a></li>
+                <li><a href="#Resources_to_learn_Python" class="nav-link">Resources to learn Python</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="main-doc" class="main-doc">
+        <section id="Introduction" class="main-section">
+            <header>
+                <h2>Introduction</h2>
+            </header>
+            <p>Python is a high-level, general-purpose programming language. Its design philosophy emphasizes code
+                readability with the use of significant indentation. Its language constructs and object-oriented
+                approach aim to help programmers write clear, logical code for small- and large-scale projects.</p>
+            <p>Python is dynamically-typed and garbage-collected. It supports multiple programming paradigms, including
+                structured (particularly procedural), object-oriented and functional programming. It is often described
+                as a "batteries included" language due to its comprehensive standard library.</p>
+            <p>Core philosophy of Python is summarized in the document The Zen of Python, by Tim Peters, which includes
+                aphorisms such as:</p>
+            <ul>
+                <li>Beautiful is better than ugly.</li>
+                <li>Explicit is better than implicit.</li>
+                <li>Simple is better than complex.</li>
+                <li>Complex is better than complicated.</li>
+                <li>Readability counts.</li>
+            </ul>
+            <p>Besides being powerful language with many awesome features, Python is easy to learn and highly beginner
+                friendly and consistently ranks as one of the most popular programming languages.</p>
+        </section>
+        <section id="History_of_Python" class="main-section">
+            <header>
+                <h2>History of Python</h2>
+            </header>
+            <p>Python was conceived in the late 1980s by <a href="https://en.wikipedia.org/wiki/Guido_van_Rossum">Guido
+                    van Rossum</a> at Centrum Wiskunde & Informatica (CWI) in the Netherlands as a successor to the ABC
+                programming language, which was inspired by SETL, capable of exception handling and interfacing with the
+                Amoeba operating system. Its implementation began in December 1989. Van Rossum shouldered sole
+                responsibility for the project, as the lead developer, until 12 July 2018, when he announced his
+                "permanent vacation" from his responsibilities as Python's "benevolent dictator for life", a title the
+                Python community bestowed upon him to reflect his long-term commitment as the project's chief
+                decision-maker. In January 2019, active Python core developers elected a five-member Steering Council to
+                lead the project.</p>
+
+            <p>Python 2.0 was released on 16 October 2000, with many major new features. Python 3.0, released on 3
+                December 2008, with many of its major features backported to Python 2.6.x and 2.7.x. Releases of Python
+                3 include the <code class="inline-code">2to3</code> utility, which automates the translation of Python 2
+                code to Python 3.</p>
+
+            <p>Python 2.7's end-of-life was initially set for 2015, then postponed to 2020 out of concern that a large
+                body of existing code could not easily be forward-ported to Python 3. No further security patches or
+                other improvements will be released for it. With Python 2's end-of-life, only Python 3.6.x and later are
+                supported.</p>
+
+            <p>Python 3.9.2 and 3.8.8 were expedited as all versions of Python (including 2.7) had security issues
+                leading to possible remote code execution[55] and web cache poisoning.</p>
+        </section>
+        <section id="Prerequisites" class="main-section">
+            <header>
+                <h2>Prerequisites</h2>
+            </header>
+            <p>Prerequisites for learning Python:</p>
+            <ul>
+                <li>Basic knowledge of navigating the files on your system.</li>
+                <li>Familiarity with software installtion (As you would most likely need to install it on your system.)
+                    <ul>
+                        <li>You can check if you have python installed on your system by starting a shell on your system
+                            typing python3 <br>
+                            <code class="block-code">$ python3</code>
+                        </li>
+                        <li>If that doesn't start the python iterpreter, you need to <a
+                                href="https://www.python.org/downloads/">download Python</a> on your machine.</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+        <section id="Hello_world" class="main-section">
+            <header>
+                <h2>Hello world</h2>
+            </header>
+            <p>If you have python downloaded and installed you can write your first lines of python code and as per
+                tradition let's begin by saying "hello world"<br>
+                <code class="block-code">
+      >>> print("hello world")<br>
+      hello world
+    </code>
+            </p>
+        </section>
+        <section id="Variables" class="main-section">
+            <header>
+                <h2>Variables</h2>
+            </header>
+            <p>Variables are values we store in memory for later use. To define a variable we use an assignment
+                statement: <br>
+                <code class="block-code">
+        >>> x = "hello there"<br>
+        >>> reply = "general kenobi"<br>
+        >>> a = 27
+      </code>
+            </p>
+        </section>
+        <section id="Types_in_Python" class="main-section">
+            <header>
+                <h2>Types in Python</h2>
+            </header>
+            <p>In Python every value has a data type and we can know which type a value belongs to, by using the <code
+                    class="inline-code">type</code> function.<br>
+                <code class="block-code">
+        >>> type("hello") <br>
+        &lt;class 'str'&gt; <br>
+        >>> <br>
+        >>> p = 73<br>
+        >>> type(p)<br>
+        &lt;class 'int'&gt;
+      </code>
+            </p>
+            Some of the types in Python are:
+            <ul>
+                <li><b>str</b> for string values.</li>
+                <li><b>int</b> for integer values.</li>
+                <li><b>float</b> for decimal values.</li>
+                <li><b>bool</b> for boolean values.</li>
+                <li><b>list</b> for list values.</li>
+                <li><b>tuple</b> for tuple values.</li>
+                <li><b>dict</b> for dictionary values.</li>
+                <li><b>None</b> for None values.</li>
+                <li><b>byte</b> for byte values.</li>
+            </ul>
+        </section>
+        <section id="Conditional_Execution" class="main-section">
+            <header>
+                <h2>Conditional Execution</h2>
+            </header>
+            <p>The simplest form of conditional statement in Python is the <code class="inline-code">if</code>
+                statement. <br>
+                <code class="block-code">
+        >>> if 2 + 2 == 4:<br>
+        ... &nbsp;&nbsp;&nbsp;&nbsp;print("I'm a math genius")
+      </code>
+            </p>
+            <p>For double-branched conditional statement we can use the <code class="inline-code">if else</code>
+                statement.
+                In this type of conditional, one branch always gets executed.<br>
+                <code class="block-code">
+        x = int(input("Enter a number: "))
+        if x % 2 == 0:<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;print("Even number found") <br>
+        else:<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;print("Odd number found") <br>
+      </code>
+            </p>
+            <p>For multi-branched conditional statement we can use the <code class="inline-code">if elif else</code>
+                statement.
+                <code class="inline-code">elif</code> is shorthand for "else-if", the else statement is optional in
+                multi-branched conditional and can be ommited.<br>
+                <code class="block-code">
+        text = input("Enter your message: ") <br>
+        if text == "hello":<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;print("Hello :)") <br>
+        elif text == "how are you?":<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;print("I'm fine, how are you?") <br>
+        elif text.startswith("bye"):<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;print("Byee, have a nice day!") <br>
+      </code>
+            </p>
+        </section>
+        <section id="Iteration" class="main-section">
+            <header>
+                <h2>Iteration</h2>
+            </header>
+            <p>Iteration is an essential and commonly used thing in programming. Python has two ways to iterate over a
+                series</p>
+            <ol>
+                <li>
+                    <h3>while loop</h3>
+                    <p>We can write a while loop by using <code class="inline-code">while</code> keyword followed by an
+                        boolean expression. The loop keep going until the boolean expression evaluates to false. <br>
+                        <code class="block-code">
+            >>> n = 0 <br>
+            >>> while n &lt; 3: <br>
+            ... &nbsp;&nbsp;&nbsp;&nbsp;print("spam") <br>
+            ... &nbsp;&nbsp;&nbsp;&nbsp;n += 1 <br>
+            ... <br>
+            spam <br>
+            spam <br>
+            spam <br>
+          </code>
+                    </p>
+                </li>
+                <li>
+                    <h3>for loop</h3>
+                    <p>We can write a for loop by using <code class="inline-code">for</code> keyword followed by an
+                        iteration variable, <code class="inline-code">in</code> keyword and a series. The loop keep
+                        going until the series is exhausted. <br>
+                        <code class="block-code">
+              >>> items = ["chicken", 9999, True] <br>
+              >>> for item in items: <br>
+              ... &nbsp;&nbsp;&nbsp;&nbsp;print(item) <br>
+              ... <br>
+              chicken <br>
+              9999 <br>
+              True <br>
+            </code>
+                    </p>
+                </li>
+            </ol>
+        </section>
+        <section id="Functions" class="main-section">
+            <header>
+                <h2>Functions</h2>
+            </header>
+            <p>We can define a function in python by using <code class="inline-code">def</code> keyword followed by the
+                function name, arguments it takes enclosed in parentheses (if it takes no arguments parentheses are left
+                empty) and a colon. <br>
+                <code class="block-code">
+        >>> def greet(name): <br>
+        ... &nbsp;&nbsp;&nbsp;&nbsp;print(f"Hello {name}!") <br>
+        ... <br>
+        >>> greet("John") <br>
+        Hello John! <br>
+      </code>
+            </p>
+        </section>
+        <section id="Object_Oriented_Programmming" class="main-section">
+            <header>
+                <h2>Object Oriented Programmming</h2>
+            </header>
+            <p>To create classes in Python we can use the <code class="inline-code">class</code> keyword followed by the
+                class name and colon. Classes can have attributes and methods within them, once we define a class we can
+                use it as an template to create a object, which is an instance of a class. <br>
+                <code class="block-code">
+        class Pet: <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;hungry = True<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;def __init__(self, name): <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.name = name <br>
+        <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;def feed(self): <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pet.hungry = False <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return f"{self.name} has eaten" <br>
+        <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;def play(self): <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pet.hungry = True <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return f"{self.name} had lots of fun with you :)" <br>
+      </code>
+            </p>
+        </section>
+        <section id="Resources_to_learn_Python" class="main-section">
+            <header>
+                <h2>Resources to learn Python</h2>
+            </header>
+            <p>If you found Python intresting, you can learn it for free! at <a
+                    href="https://www.freecodecamp.org/learn/scientific-computing-with-python/">freecodecamp</a>. I
+                highly recommend this resource to anyone who wants to learn this amazing language.</p>
+        </section>
+    </main>
+</body>
+
+</html>
